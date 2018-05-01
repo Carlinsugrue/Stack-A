@@ -19,7 +19,7 @@
       <link rel="apple-touch-icon" sizes="57x57" href="./static/img/favicon-57.png">
 
       <!--  Resources style ================== -->
-      <link href="./static/css/theme-MariBlue.css" rel="stylesheet" type="text/css" media="all"/>
+      <link href="./static/css/theme-Dark.css" rel="stylesheet" type="text/css" media="all"/>
       <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
       <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
       <link rel="stylesheet" href="./static/lib/css/dc.css">
@@ -36,15 +36,11 @@
             <!-- Your logo -->
   			    <!-- <img src="img/logo.png" alt="" class="main-logo" /> -->
 
-            <div class="h-content">
               <!-- Map -->  
-    		      <div class="col-md-12">
-    		          <div class="chart-stage">
+    		      <div class="mapfit col-lg-12">
     		            <div id="nz-chart"></div>
-    		          </div>
     		      </div>
     		      <!-- Map -->
-            </div>
 
 
             <div id="particles-js" class="gradient"></div>
@@ -58,28 +54,25 @@
 
         <div id="rightSide">
 
+          <!-- Project -->
           <div class="project">
             <ul class="gallery project_navigation">
-              <li class="item col-sm-6 col-xs-12">
+              <li class="item col-lg-12">
                 <figure>
-                  
-                  <!-- Time Chart --> 
-                  <div class="col-md-12">
-                    <div class="chart-wrapper">
-                      <div class="chart-title">
-                        Number of victims 2017
-                      </div>
-                      <div class="chart-stage">
-                        <div id="time-chart"></div>
-                      </div>
+                  <!-- time line -->
+                  <div class="chart-wrapper">
+                    <div class="chart-title">
+                      Time-line of victims 2017
+                    </div>
+                    <div class="chart-stage">
+                      <div id="time-chart"></div>
                     </div>
                   </div>
-                  <!-- Time Chart -->
-                  <!-- description below this one -->
+                  <!-- Picture's description below this one -->
                   <figcaption class="caption">
                     <div class="photo-details">
                       <h4>Music Player</h4>
-
+                      <span>By Code Rare</span>
                     </div>
                     <a href="#project1" class="view">VIEW</a>
                   </figcaption>
@@ -88,23 +81,15 @@
 
               <li class="item col-sm-6 col-xs-12">
                 <figure>
-                  <!-- Your picture -->
-                  <img src="./static/img/shells-massage-therapy-sand.jpg"  alt="This is my work" class="img-responsive" />
-                  <!-- Picture's description below this one -->
-                  <figcaption class="caption">
-                    <div class="photo-details">
-                      <h4>Sea Shells</h4>
-                      <span>By Code Rare</span>
+                  <!-- Type of crime -->
+                  <div class="chart-wrapper">
+                    <div class="chart-title">
+                      Type Of Crime
                     </div>
-                    <a href="#project2" class="view">VIEW</a>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li class="item col-sm-6 col-xs-12">
-                <figure>
-                  <!-- Your picture -->
-                  <img src="./static/img/typing-vintage-technology-keyboard.jpg"  alt="This is my work" class="img-responsive" />
+                    <div class="chart-stage">
+                      <div id="crime-type-row-chart"></div>
+                    </div>
+                  </div>
                   <!-- Picture's description below this one -->
                   <figcaption class="caption">
                     <div class="photo-details">
@@ -118,8 +103,15 @@
 
               <li class="item col-sm-6 col-xs-12">
                 <figure>
-                  <!-- Your picture -->
-                  <img src="./static/img/hand-taking-photo-photography-vintage.jpg"  alt="This is my work" class="img-responsive" />
+                  <!-- Weapons used -->
+                  <div class="chart-wrapper">
+                    <div class="chart-title">
+                      Weapons Used In Crime
+                    </div>
+                    <div class="chart-stage">
+                      <div id="weapon-used-pie-chart"></div>
+                    </div>
+                  </div>
                   <!-- Picture's description below this one -->
                   <figcaption class="caption">
                     <div class="photo-details">
@@ -133,8 +125,15 @@
 
               <li class="item col-sm-6 col-xs-12">
                 <figure>
-                  <!-- Your picture -->
-                  <img src="./static/img/guitar.jpg"  alt="This is my work" class="img-responsive" />
+                  <!-- Total -->
+                  <div class="chart-wrapper">
+                    <div class="chart-title">
+                      Total Number of Victimizations
+                    </div>
+                    <div class="chart-stage">
+                      <div id="number-victims-nd"></div>
+                    </div>
+                  </div>
                   <!-- Picture's description below this one -->
                   <figcaption class="caption">
                     <div class="photo-details">
@@ -148,8 +147,15 @@
 
               <li class="item col-sm-6 col-xs-12">
                 <figure>
-                  <!-- Your picture -->
-                  <img src="./static/img/food-plate-yellow-white.jpg"  alt="This is my work" class="img img-responsive" />
+                  <!-- Total of people victimized -->
+                  <div class="chart-wrapper">
+                    <div class="chart-title">
+                      Total Number of people Victimized
+                    </div>
+                    <div class="chart-stage">
+                      <div id="total-victims-nd"></div>
+                    </div>
+                  </div>
                   <!-- Picture's description below this one -->
                   <figcaption class="caption">
                     <div class="photo-details">
@@ -157,100 +163,16 @@
                       <span>By Code Rare</span>
                     </div>
                     <a href="#project6" class="view">VIEW</a>
-
                   </figcaption>
                 </figure>
               </li>
+
             </ul>
 
-<!--             <ul class="project_info">
-              <li id="project1">
-                <div class="project_content">
-                  <h2>YOUR TITLE GOES HERE</h2>
-                  <p>D3-CHART HERE
-                  </p>
-                </div>
-              </li>
-
-              <li id="project2">
-                <div class="project_content">
-                  <h2>YOUR TITLE GOES HERE</h2>
-                  <p>D3-CHART HERE
-                  </p>
-                </div>
-              </li>
-
-              <li id="project3">
-                <div class="project_content">
-                  <h2>YOUR TITLE GOES HERE</h2>
-                  <p>D3-CHART HERE
-                  </p>
-                </div>
-              </li>
-
-              <li id="project4">
-                <div class="project_content">
-                  <h2>YOUR TITLE GOES HERE</h2>
-                  <p>D3-CHART HERE
-                  </p>
-                </div>
-              </li>
-
-              <li id="project5">
-                <div class="project_content">
-                  <h2>YOUR TITLE GOES HERE</h2>
-                  <p>D3-CHART HERE
-                  </p>
-                </div>
-              </li>
-
-              <li id="project6">
-                <div class="project_content">
-                  <h2>YOUR TITLE GOES HERE</h2>
-                  <p>D3-CHART HERE
-                  </p>
-                </div>
-              </li>
-            </ul> -->
-
           </div>
 
-          <div class="about">
-            <h2>Get started fast with one of our unique, pre-built concepts.</h2>
-            <p>
-              Customers love our block-based approach to template building,
-              it makes assembling beautiful pages fast and enjoyable, leaving
-               more time to craft your perfect layout. love our block-based
-              approach to template building, it makes assembling beautiful pages
-              fast and enjoyable, leaving more time to craft your perfect layout.
-            </p>
-
-            <p>
-              Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-            </p>
-
-            <div class="service row">
-              <div class="feature col-sm-3 col-xs-3">
-                <i class="ion-heart"></i>
-                <h6>SIMPLE</h6>
-              </div>
-
-              <div class="feature col-sm-3 col-xs-3">
-                <i class="ion-erlenmeyer-flask"></i>
-                <h6>CREATIVE</h6>
-              </div>
-
-              <div class="feature col-sm-3 col-xs-3">
-                <i class="ion-waterdrop"></i>
-                <h6>SMOOTH</h6>
-              </div>
-
-              <div class="feature col-sm-3 col-xs-3">
-                <i class="ion-code"></i>
-                <h6>STABLE</h6>
-              </div>
-            </div>
-          </div>
+        </div>
+          <!-- /project -->
 
 
           <footer>

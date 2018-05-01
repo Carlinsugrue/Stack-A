@@ -20,7 +20,7 @@ function makeGraphs(error, victimsJson, areasJson) {
 	//Define Dimensions
 	var dateDim = ndx.dimension(function(d) { return d["Year Month"]; });
 	var crimeTypeDim = ndx.dimension(function(d) { return d["Crime Type"]; });
-	var weaponUsedDim = ndx.dimension(function(d) { return d["Weapon"]; });
+	var weaponUsedDim = ndx.dimension(function(d) { return d["Occurrence Day Of Week"]; });
 	var areaDim = ndx.dimension(function(d) { return d["Territorial Authority"]; });
 	var totalVictimsDim  = ndx.dimension(function(d) { return d["Victimisations"]; });
 
@@ -45,12 +45,16 @@ function makeGraphs(error, victimsJson, areasJson) {
     //Charts
 	var timeChart = dc.barChart("#time-chart");
 	var crimeTypeChart = dc.rowChart("#crime-type-row-chart");
-	var weaponUsedChart = dc.rowChart("#weapon-used-row-chart");
+	var weaponUsedChart = dc.pieChart("#weapon-used-pie-chart");
 	var nzChart = dc.geoChoroplethChart("#nz-chart");
 	var numberVictimsND = dc.numberDisplay("#number-victims-nd");
 	var totalVictimsND = dc.numberDisplay("#total-victims-nd");
 
-	var graph_div = document.getElementById("nz-chart");
+
+	//chart size variables
+	var mapWidth = $("#home").width();
+	var mapHeight = $("#home").height();
+
 
 	numberVictimsND
 		.formatNumber(d3.format("d"))
@@ -64,8 +68,8 @@ function makeGraphs(error, victimsJson, areasJson) {
 		.formatNumber(d3.format(".3s"));
 
 	timeChart
-		.width(600)
-		.height(160)
+		.width(950)
+		.height(200)
 		.margins({top: 10, right: 50, bottom: 30, left: 50})
 		.dimension(dateDim)
 		.group(numVictimsByDate)
@@ -85,13 +89,14 @@ function makeGraphs(error, victimsJson, areasJson) {
 	weaponUsedChart
 		.width(300)
 		.height(250)
+		.slicesCap(8)
+    	.innerRadius(100)
         .dimension(weaponUsedDim)
         .group(numVictimsByWeapon)
-        .xAxis().ticks(4);
+        .legend(dc.legend())
 
-
-	nzChart.width(window.screen.availHeight/2)
-		.height(window.screen.availWidth/2)
+	nzChart.width(mapWidth)
+		.height(mapHeight)
 		.dimension(areaDim)
 		.group(totalVictimsByArea)
 		.colors(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"])
@@ -102,12 +107,13 @@ function makeGraphs(error, victimsJson, areasJson) {
 		.projection(d3.geo.albers()
     				.center([0, 10 ])
     				.scale(4000)
-   				.rotate([-175,45]))
+   				.rotate([-174.7,45]))
 		.title(function (p) {
 			return "Territorial Authority: " + p["key"]
 					+ "\n"
 					+ "Total victims: " + Math.round(p["value"]);
 		})
+
 
     dc.renderAll();
 
