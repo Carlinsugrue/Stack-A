@@ -68,8 +68,8 @@ function makeGraphs(error, victimsJson, areasJson) {
 		.formatNumber(d3.format(".3s"));
 
 	timeChart
-		.width(950)
-		.height(200)
+		.width(900)
+		.height(350)
 		.margins({top: 10, right: 50, bottom: 30, left: 50})
 		.dimension(dateDim)
 		.group(numVictimsByDate)
@@ -80,17 +80,17 @@ function makeGraphs(error, victimsJson, areasJson) {
 		.yAxis().ticks(4);
 
 	crimeTypeChart
-        .width(300)
+        .width(900)
         .height(250)
         .dimension(crimeTypeDim)
         .group(numVictimsByCrimeType)
         .xAxis().ticks(4);
 
 	weaponUsedChart
-		.width(300)
-		.height(250)
+		.width(350)
+		.height(350)
 		.slicesCap(8)
-    	.innerRadius(100)
+    	.innerRadius(50)
         .dimension(weaponUsedDim)
         .group(numVictimsByWeapon)
         .legend(dc.legend())
