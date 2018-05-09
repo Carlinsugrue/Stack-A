@@ -20,7 +20,8 @@ function makeGraphs(error, victimsJson, areasJson) {
 	//Define Dimensions
 	var dateDim = ndx.dimension(function(d) { return d["Year Month"]; });
 	var crimeTypeDim = ndx.dimension(function(d) { return d["Crime Type"]; });
-	var weaponUsedDim = ndx.dimension(function(d) { return d["Occurrence Day Of Week"]; });
+	var weaponUsedDim = ndx.dimension(function(d) { return d["Weapon"]; });
+	var dayOfWeekDim = ndx.dimension(function(d) { return d["Occurrence Day Of Week"]; });
 	var areaDim = ndx.dimension(function(d) { return d["Territorial Authority"]; });
 	var totalVictimsDim  = ndx.dimension(function(d) { return d["Victimisations"]; });
 
@@ -29,6 +30,7 @@ function makeGraphs(error, victimsJson, areasJson) {
 	var numVictimsByDate = dateDim.group(); 
 	var numVictimsByCrimeType = crimeTypeDim.group();
 	var numVictimsByWeapon = weaponUsedDim.group();
+	var numVictimsByDayOfWeek = dayOfWeekDim.group();
 	var totalVictimsByArea = areaDim.group().reduceSum(function(d) {
 		return d["Victimisations"];
 	});
@@ -45,7 +47,8 @@ function makeGraphs(error, victimsJson, areasJson) {
     //Charts
 	var timeChart = dc.barChart("#time-chart");
 	var crimeTypeChart = dc.rowChart("#crime-type-row-chart");
-	var weaponUsedChart = dc.pieChart("#weapon-used-pie-chart");
+	var weaponUsedChart = dc.rowChart("#weapon-used-pie-chart");
+	var dayOfWeekChart = dc.pieChart("#dayOfWeek-pie-chart");
 	var nzChart = dc.geoChoroplethChart("#nz-chart");
 	var numberVictimsND = dc.numberDisplay("#number-victims-nd");
 	var totalVictimsND = dc.numberDisplay("#total-victims-nd");
@@ -68,7 +71,7 @@ function makeGraphs(error, victimsJson, areasJson) {
 		.formatNumber(d3.format(".3s"));
 
 	timeChart
-		.width(900)
+		.width(890)
 		.height(350)
 		.margins({top: 10, right: 50, bottom: 30, left: 50})
 		.dimension(dateDim)
@@ -77,22 +80,32 @@ function makeGraphs(error, victimsJson, areasJson) {
 		.x(d3.time.scale().domain([minDate, maxDate]))
 		.elasticY(true)
 		.xAxisLabel("Year")
-		.yAxis().ticks(4);
+		.yAxis().ticks(10);
 
 	crimeTypeChart
         .width(900)
         .height(250)
         .dimension(crimeTypeDim)
         .group(numVictimsByCrimeType)
-        .xAxis().ticks(4);
+        .elasticX(true)
+        .xAxis().ticks(10);
 
 	weaponUsedChart
 		.width(350)
 		.height(350)
-		.slicesCap(8)
-    	.innerRadius(50)
         .dimension(weaponUsedDim)
         .group(numVictimsByWeapon)
+
+        .elasticX(true)
+        .xAxis().ticks(10);
+
+    dayOfWeekChart
+		.width(350)
+		.height(350)
+		.slicesCap(8)
+    	.innerRadius(50)
+        .dimension(dayOfWeekDim)
+        .group(numVictimsByDayOfWeek)
         .legend(dc.legend())
 
 	nzChart.width(mapWidth)

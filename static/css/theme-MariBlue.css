@@ -18,7 +18,7 @@
 @import url(default-skin/default-skin.css);
 @import url(jquery.mCustomScrollbar.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800");
-html, body, div, span, applet, object, iframe,
+html, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, s, samp,
@@ -43,8 +43,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, main {
   display: block; }
 
-body {
-  line-height: 1; }
 
 ol, ul {
   list-style: none; }
@@ -108,7 +106,7 @@ h6 {
   width: 55%;
   height: 100%;
   overflow-x: hidden;
-  background: #DCDCDC; }
+  background: #F5F5F5; }
 
 .gradient {
   -webkit-background: linear-gradient(rgba(189,195,199, 0.95), rgba(44,62,80, 0.95));
@@ -165,7 +163,8 @@ h6 {
 /* ------------------------------------- */
 
 .project {
-  background: #DCDCDC;
+  display: block;
+  background: #F5F5F5;
   height: 95%; }
 
 /* ------------------------------------- */
@@ -268,12 +267,15 @@ img {
 /* ------------------------------------- */
 
 .chart-wrapper {
-  background: #fff;
+  background: rgba(255,255,255, 0.7);
   border: 1px solid #e2e2e2;
   border-radius: 3px;
   margin-bottom: 10px;
+  -webkit-box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.28);
+  -moz-box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.28);
+  box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.28);
 }
-.chart-wrapper .chart-title {
+.chart-wrapper{
   border-bottom: 1px solid #d7d7d7;
   color: #666;
   font-size: 14px;
@@ -307,4 +309,9 @@ img {
     fill: black;
     font-size: 12px;
     color: #808080;
+}
+
+.mapshadow {
+  -webkit-filter: drop-shadow( 10px 11px 5px rgba(0,0,0,0.28) ); 
+  filter: drop-shadow( 10px 11px 5px rgba(0,0,0,0.28) );
 }
