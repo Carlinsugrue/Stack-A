@@ -1,11 +1,4 @@
-/*------------------------------------------------------------------
-[Table of contents]
-1. @Import & Reset
-2. Generic styles
-3. Home
-4. Footer
 
--------------------------------------------------------------------*/
 /* ------------------------------------- */
 /* @Import & Reset  ................... */
 /* ------------------------------------- */
@@ -62,7 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;}
 
 h1 {
-  font-size: 2.369em;
+  font-size: 2.40em;
   font-weight: 300;
   margin-bottom: 20px; }
 
@@ -144,9 +137,10 @@ h6 {
 
 .main-logo {
   position: absolute;
-  top: 8%;
+  top: 5%;
   max-width: 150px;
-  left: 10%; }
+  left: 8%;
+  color:white; }
 
 #homeCenter .social_icons {
   text-align: center;
@@ -165,6 +159,7 @@ h6 {
 .project {
   display: block;
   background: #F5F5F5;
+  padding:1%;
   height: 95%; }
 
 /* ------------------------------------- */

@@ -97,7 +97,7 @@ function makeGraphs(error, victimsJson, areasJson) {
         .group(numVictimsByWeapon)
 
         .elasticX(true)
-        .xAxis().ticks(10);
+        .xAxis().ticks(4);
 
     dayOfWeekChart
 		.width(350)
