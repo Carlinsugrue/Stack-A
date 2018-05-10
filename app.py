@@ -18,14 +18,6 @@ FIELDS = {'Territorial Authority': True, 'Crime Type': True, 'Location Type': Tr
 def index():
     return render_template("index.html")
 
-@app.route("/animation")
-def animation():
-    return render_template("animation.html")
-
-@app.route("/dark")
-def dark():
-    return render_template("dark.html")
-
 
 @app.route("/nzcrime2017/victims")
 def nzcrime2017_victims():
