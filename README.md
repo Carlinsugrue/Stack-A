@@ -8,4 +8,4 @@ The dependencies for the project can be installed using
 
 import the csv
 
-    $ mongoimport -d donorschoose -c projects --type csv --file /vagrant/opendata_projects.csv -headerline
+    $ mongoimport -db nzcrime --collection victims --type csv --file crime.csv -headerline
