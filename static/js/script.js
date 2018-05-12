@@ -31,36 +31,17 @@ $( document ).ready(function() {
 
 
 
-  /* ------------------------------------- */
-  /* ScrollToTop   ................... */
-  /* ------------------------------------- */
-
-    $('.up').on('click', function() {
-      $('#rightSide').animate({
-          scrollTop: 0
-      }, 500);
-      if($(window).width() < 1024) {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
-      }
-      return false;
-    });
-
-
-  /* ------------------------------------- */
-  /* testing themes   ................... */
-  /* ------------------------------------- */
-
-  $(".header--theme-button").on("click", function() {
-  var primaryColor = $(this).css("--theme-primary");
-  var secondaryColor = $(this).css("--theme-secondary");
-
-  $(".header--theme-button").removeClass("active");
-  $(this).addClass("active");
-
-  $(document.body).css("--primary-color", primaryColor);
-  $(document.body).css("--secondary-color", secondaryColor);
-  });
-
 });
+
+
+  /* ------------------------------------- */
+  /* Side-Nav   ................... */
+  /* ------------------------------------- */
+
+  function openNav() {
+    document.getElementById("sidenav").style.width = "180px";
+  }
+
+  function closeNav() {
+      document.getElementById("sidenav").style.width = "0";
+  }

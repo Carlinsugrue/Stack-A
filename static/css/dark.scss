@@ -1,14 +1,16 @@
 /* ------------------------------------- */
+/* Color Variables  ................... */
+/* ------------------------------------- */
+$gradientPrimary: rgba(0,0,0, 0.95);
+$gradientSecondary: rgba(0,0,0, 0.95);
+$footerPrimary: #2C2E2F;
+
+
+/* ------------------------------------- */
 /* @Import & Reset  ................... */
 /* ------------------------------------- */
-@import url(ionicons.min.css);
 @import url(bootstrap.min.css);
-@import url(magnific-popup.css);
-@import url(flexslider.css);
 @import url(animsition.min.css);
-@import url(photoswipe.css);
-@import url(default-skin/default-skin.css);
-@import url(jquery.mCustomScrollbar.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800");
 html, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -101,11 +103,11 @@ h6 {
   background: #F5F5F5; }
 
 .gradient {
-  -webkit-background: linear-gradient(rgba(189,195,199, 0.95), rgba(44,62,80, 0.95));
-  -ms-background: linear-gradient(rgba(189,195,199, 0.95), rgba(44,62,80, 0.95));
-  -moz-background: linear-gradient(rgba(189,195,199, 0.95), rgba(44,62,80, 0.95));
-  -o-background: linear-gradient(rgba(189,195,199, 0.95), rgba(44,62,80, 0.95));
-  background: linear-gradient(rgba(189,195,199, 0.95), rgba(44,62,80, 0.95)); }
+  -webkit-background: linear-gradient($gradientPrimary, $gradientSecondary);
+  -ms-background: linear-gradient($gradientPrimary, $gradientSecondary);
+  -moz-background: linear-gradient($gradientPrimary, $gradientSecondary);
+  -o-background: linear-gradient($gradientPrimary, $gradientSecondary);
+  background: linear-gradient($gradientPrimary, $gradientSecondary); }
 
 /* ------------------------------------- */
 /* Home ................... */
@@ -170,7 +172,7 @@ footer {
   display: table;
   width: 100%;
   padding: 2.5%;
-  background: #2C2E2F;
+  background:$footerPrimary;
   color: #fff; }
   footer p {
     display: table-cell;
@@ -313,31 +315,3 @@ img {
 /* ------------------------------------- */
 /* Themes testing ..................... */
 /* ------------------------------------- */
-
-.header--theme-button {
-  height: 30px;
-  width: 30px;
-  margin: 10px 5px 0 0;
-  display: inline-block;
-  border-top: 15px solid var(--theme-primary);
-  border-bottom: 15px solid var(--theme-secondary);
-  border-right: 0;
-  border-left: 0;
-  padding: 0;
-  box-shadow: 0 0 3px gray;
-}
-
-.header--theme-button:hover {
-  box-shadow: 2px 2px 2px gray;
-}
-
-.header--theme-button.active {
-  box-shadow: 3px 3px 3px gray;
-}
-
-:root {
-  --primary-color: orange;
-  --secondary-color: white;
-  --theme-primary: black;
-  --theme-secondary: white;
-}
