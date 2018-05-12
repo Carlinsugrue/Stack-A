@@ -40,8 +40,10 @@ $( document ).ready(function() {
 
   function openNav() {
     document.getElementById("sidenav").style.width = "180px";
+    document.getElementById("sidenav").style.opacity = "1";
   }
 
   function closeNav() {
       document.getElementById("sidenav").style.width = "0";
+      document.getElementById("sidenav").style.opacity = "0";
   }
