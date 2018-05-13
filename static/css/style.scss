@@ -6,6 +6,7 @@ $gradientSecondary: rgba(44,62,80, 0.95);
 $footerPrimary: #2C2E2F;
 $projectBackground: #F5F5F5;
 $sidenavColor: #E7E7E7;
+$logoColor: #fff;
 
 /* ------------------------------------- */
 /* SIDE NAV COLOR THEMES ............... */
@@ -231,11 +232,11 @@ h6 {
 .main-logo {
   position: absolute;
   text-align: center;
-  top: 5%;
+  top: 4.5%;
   max-width: 150px;
   left: 7%;
-  color:white;
-  border: 1.9px solid white; }
+  color:$logoColor;
+  border: 2.2px solid $logoColor; }
 
 #homeCenter .social_icons {
   text-align: center;
@@ -358,19 +359,20 @@ img {
 
 .chart-wrapper {
   background: rgba(255,255,255, 0.7);
-  border: 1px solid #e2e2e2;
   border-radius: 3px;
   margin-bottom: 10px;
-  -webkit-box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.28);
-  -moz-box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.28);
-  box-shadow: 10px 11px 5px -6px rgba(0,0,0,0.28);
+  transition: 0.3s;
 }
 .chart-wrapper{
-  border-bottom: 1px solid #d7d7d7;
   color: #666;
   font-size: 14px;
   font-weight: 200;
   padding: 7px 10px 4px;
+}
+
+.chart-wrapper:hover {
+  box-shadow: 0 3px 3px -2px rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 1px 8px 0 rgba(0,0,0,.12);
+  webkit-box-shadow: 0 3px 3px -2px rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 1px 8px 0 rgba(0,0,0,.12);
 }
 
 .chart-wrapper .chart-stage {
